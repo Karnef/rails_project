@@ -2,9 +2,9 @@ class CreateTests < ActiveRecord::Migration[7.0]
   def change
     create_table :tests do |t|
       t.string :title, null: false
-      t.integer :level, default: 0
-      t.references :user_id, user: true, null: false, foreign_key: true
-      t.references :category_id, category: true, null: false, foreign_key: true
+      t.integer :level, default: 0, null: false
+      t.references :author, user: true, null: false, foreign_key: true
+      t.references :category, category: true, null: false, foreign_key: true
 
       t.timestamps
     end
